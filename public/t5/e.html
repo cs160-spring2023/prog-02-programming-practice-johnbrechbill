@@ -1,6 +1,29 @@
 <!DOCTYPE html>
+<style>
+	.row1 {
+		height: 10vh;
+		overflow: auto;
+	}
+</style>
+
+<style>
+	.row2 {
+		height: 55vh;
+		overflow: auto;
+	}
+</style>
+
+<style>
+	.row3 {
+		height: 35vh;
+		overflow: auto;
+	}
+</style>
+
+
 
 <html>
+
 <head>
 	<title></title>
 
@@ -8,13 +31,31 @@
 	<!-- let's include the css file for bootstrap, then our custom css -->
 	<link rel="stylesheet" type="text/css" href="/vendors/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	
+
 	<!-- let's also include these jquery scripts. -->
 	<script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
 	<script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
 </head>
+
 <body>
-	<!-- Your layout here -->
+	<div class="container-fluid">
+
+		<div class="row row1 bg-success">
+			
+		</div>
+		<div class="row row3 bg-success">
+			<div class="col bg-danger"></div>
+			<div class="col bg-primary"></div>
+		</div>
+		<div class="row2 bg-dark">
+			
+		</div>
+	</div>
+</body>
+</html>
+		  
+	</div>
 
 </body>
+
 </html>

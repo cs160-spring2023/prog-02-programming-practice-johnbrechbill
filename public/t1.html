@@ -26,7 +26,7 @@
         <h3>Task 1a</h3>
       </div>
       <div class="col-6">
-        <button class="btn btn-light float-right">
+        <button id="reset" class="btn reset btn-light float-right">
           Reset
         </button>
       </div>
@@ -34,8 +34,8 @@
     <div class="row">
       <div class="col-12">
         <div class="shape-container">
-          <div class="p2-circle bg-purple"></div>
-          <div class="p2-circle bg-purple"></div>
+          <div id="bg_purple" class="p2-circle bg-purple"></div>
+          <div id="bg_purple" class="p2-circle bg-purple"></div>
           <div class="p2-circle bg-purple"></div>
           <div class="p2-circle bg-purple"></div>
           <div class="p2-circle bg-purple"></div>
@@ -68,8 +68,65 @@
 
 
 <script type="text/javascript">
-  // your solution here
+  $(document).ready(function() {
+    $('.bg-purple').click(function() {
+      $('.bg-purple').hide();
+    });
+    
+    
+    $('#reset').click(function() {
+      $('.bg-purple').show();
+    });
+
+   
+  });
+ 
+
 
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.bg-green').click(function() {
+      $('.bg-green').hide();
+      $('.bg-blue').hide();
+    });
+    
+    
+    $('#reset').click(function() {
+      $('.bg-green').show();
+      $('.bg-blue').show();
+    });
+
+   
+  });
+ 
+
+
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.bg-orange.p2-border').click(function() {
+      $('.bg-orange.p2-border').hide();
+    });
+
+    $('#reset').click(function() {
+      $('.bg-orange.p2-border').show();
+    });
+
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#gradient-circle').hover(function() {
+      $('#gradient-circle').hide();
+    });
+    
+  });
+</script>
+
+
 </body>
 </html>

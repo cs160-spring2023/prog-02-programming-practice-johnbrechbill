@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
+
+
+
 <html>
+
 <head>
 	<title></title>
 
@@ -13,8 +17,59 @@
 	<script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
 	<script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
 </head>
+<style>
+	.row1 {
+		height: 33vh;
+		overflow: auto;
+	}
+</style>
+
+<style>
+	.row2 {
+		height: 66vh;
+		overflow: auto;
+	}
+</style>
+
+<style>
+	.row3 {
+		height: 33vh;
+		overflow: auto;
+		margin: 10%;
+	}
+
+	.margin-element {
+		padding: 5%;
+	}
+</style>
+
 <body>
-	<!-- Your layout here -->
+	<div class="container-fluid">
+		<div class="row bg-danger" style="height: 40vh">
+			<p></p>
+			<div class="row" style="padding: 10vh 10vw">
+				<div class="col bg-warning" style="height: 25vh; width: 70vh;">
+					<p></p>
+				</div>
+				<div class="col bg-primary" style="height: 25vh; width: 70vh;">
+					<p></p>
+				</div>
+			</div>
+		</div>
+
+
+	<div class="row2 bg-success">
+		<p></p>
+		<div class="row2 bg-dark ml-auto" style="width: 10vh; height: 10vh;"></div>
+		<p></p>
+
+	</div>
+	</div>
+</body>
+
+</html>
+
 
 </body>
+
 </html>

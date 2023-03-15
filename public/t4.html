@@ -12,8 +12,12 @@
   <!-- let's also include these jquery scripts. -->
   <script src="/vendors/jquery/jquery-3.3.1.min.js"></script>
   <script src="/vendors/jquery-ui/jquery-ui.min.js"></script>
+  <script src="https://http://api.openweathermap.org/data/2.5/forecast?lat=37.774929&lon=-122.419418&appid=cfc362958db475e8195b0dd71569f2d8"></script>
+  
+</head>
 </head>
 <body>
+<body onload="startTime()"></body>
     <div class="container">
         <div class="row">
           <a href="/" class="btn btn-light float-right">
@@ -21,13 +25,74 @@
           </a>
       </div>
   </div>
+</body>
+<div id="weather">
+  </div>
+  <p></p>
   
-  <!-- Your weather forecast here! -->
+  <p>SAN FRANCISCO'S WEATHER</p>
+  <p>CURRENT TIME: <span id="txt"></span></p>
 
-  <script type="text/javascript">
-	// your solution here
+  <div class="alert alert-secondary" role="alert">
+  <p>Forecast: <span id="forecasts"></span></p>
+  </div>
+
+<script>
+const apiKey = "cfc362958db475e8195b0dd71569f2d8";
+const apiUrl = "http://api.openweathermap.org/data/2.5/forecast?lat=37.774929&lon=-122.419418&units=metric&appid=" + apiKey;
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+
+    const forecasts = data.list.slice(0, 8); // get first 5 timestamps
+    
+    forecasts.forEach(forecast => {
+      
+      const timeStamp = forecast.dt_txt;
+      const temperature = forecast.main.temp;
+      const windSpeed = forecast.wind.speed;
+      const weatherDescription = forecast.weather[0].description;
+    
+      // create a new HTML element for each forecast
+      const forecastElement = document.createElement('div');
+      forecastElement.innerHTML = `
+        <p> ____________________ </p>
+        <p>Time Period: ${timeStamp}</p>
+        <p>Weather: ${weatherDescription}</p>
+        <p>Temp: ${temperature}°C</p>
+        <p>Wind speed: ${windSpeed}m/s</p>
+        <p></p>
+      `;
+      
+      // add the forecast element to the HTML page
+      document.getElementById('forecasts').appendChild(forecastElement);
+    });
+  });
 
 
 </script>
-</body>
+<script>
+  function startTime() {
+    const today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+    setTimeout(startTime, 1000);
+  }
+  
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+
+
+  }
+  </script>
+
+
+
+
 </html>

@@ -26,7 +26,7 @@
         <h3>Task 2</h3>
       </div>
       <div class="col-6">
-        <button class="btn btn-light float-right">
+        <button id= "stop" class="btn btn-light float-right">
           Stop
         </button>
       </div>
@@ -45,8 +45,25 @@
 
 <script type="text/javascript">
 
-  // your solution here
+  let intervalID;
 
+  intervalID = setInterval(function() {
+  id=$(".shape-container").append("<div class='p2-circle bg-green'></div>");
+      
+  }, 1000);
+
+type="text/javascript">
+  $(document).ready(function() {
+  $('#stop').click(function() {
+      clearInterval(intervalID);
+    });
+
+   
+  });
+ 
 </script>
+
+
+
 </body>
 </html>
